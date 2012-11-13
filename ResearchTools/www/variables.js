@@ -41,7 +41,7 @@ var show = false;
 
 var frequency = 15000;
 
-var beep_file = new Media("beep.wav", function() { }, function() { });
+var beep_file = 0;//new Media("beep.wav", function() { }, function() { });
 
 
 /* Default Data */
@@ -124,7 +124,7 @@ testObservationData.intervals[2].states["MO"] = true;
 testObservationData.intervals[2].states["FE"] = true;
 testObservationData.intervals[2].events["VVE"] = 30;
 
-
+var csv_file = new CSVFile(testSCI.level1_states, testSCI.level2_states, testSCI.default_events);
 
 function createObservation() {
     

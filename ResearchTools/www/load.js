@@ -37,5 +37,8 @@ $("#report-content").live('pageshow', function(event, ui) {
                          createRowsForEvents(namespaces.SCI.default_events);
                          
                          reportIntervalsData(testObservationData.intervals);
+                         iterateOverIntervals(testObservationData.intervals);
+                         
+                         email(csv_file.file);
 });
 

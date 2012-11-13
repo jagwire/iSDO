@@ -266,6 +266,7 @@ function tally(str) {
     //  navigator.notification.vibrate(500);
     //alert("!MEEP");
     //console.log("SEARCING FOR ID: "+str+"-tally");
+    beep(2);
     var tick = $("#"+str+"-tally").text();
     
     //console.log("CURRENT TICK VALUE: "+tick);

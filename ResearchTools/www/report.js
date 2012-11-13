@@ -12,7 +12,6 @@ function createRowsForStates(states) {
     }
 }
 
-
 function createRowsForEvents(events) {
     
     console.log("CREATING INITIAL ROWS FOR EVENTS!");
@@ -76,25 +75,42 @@ function reportIntervalsData(intervals) {
     }
 }
 
-function interateOverIntervals(intervals) {
+
+
+
+function iterateOverIntervals(intervals) {
+	var intervalCount = 0;
+	
+	console.log("ITERATING "+intervals.length+" INTERVALS");
+	
 	for(var i in intervals) {
+	
 		//pre-phase
+		intervalCount += 1;
 		
+		//add the interval to our column headings
+		csv_file.addColumn(intervalCount);
+				
 		var states = intervals[i].states;
 		
-		for(var s in states) {
-			processState(s, states[s]);
+		for(var state in states) {
+			console.log("PROCESSING STATE: " +state+"->"+states[state]+" for interval: " +intervalCount);
+			processState(intervalCount, state, states[state]);
 		}
 		
-		var events in inetrvals[i].events;
+		var events = intervals[i].events;
 		
-		for(var e in events) {
-			processEvent(e, events[e]);
+		for(var event in events) {
+			processEvent(intervalCount, event, events[event]);
 		}
 	}
+	csv_file.joinFile();
+	$("#report-content").append("<p> DATA: "+csv_file.file+"</p>");
+	console.log(csv_file.file);
+	
 }
 
-function processState(index, value) {
+function processState(interval_index, state_index, value) {
 	var symbol = "_";
 	
 	if(value == true) {
@@ -103,16 +119,18 @@ function processState(index, value) {
 		symbol = " ";
 	}
 	
-	var tableCell = "<td>"+symbol+"</td>";
-	$(tableCell).appendTo("#"+index"-state-table-row");
+	//var tableCell = "<td>"+symbol+"</td>";
+	//$(tableCell).appendTo("#"+index+"-state-table-row");
+	csv_file.updateValue(state_index, interval_index, symbol);
+	console.log(state_index+"," +interval_index+"="+value); 
 	
 }
 
-function processEvents(index value) {
+function processEvent(interval_index, event_index, value) {
 	var tableCell = "<td>"+value+"</td>";
 	
 	$(tableCell).appendTo("#"+value+"-event-table-row");
-	
+	csv_file.updateValue(event_index, interval_index, value);
 
 }
 
