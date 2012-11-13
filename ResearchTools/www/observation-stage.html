@@ -1,0 +1,159 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>iSDO</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+            <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+            <script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+            <script type="text/javascript" charset="utf-8" src="cordova-2.1.0.js"></script>
+            <script type="text/javascript" charset="utf-8" src="EmailComposer.js"></script>
+            <script type="text/javascript" charset="utf-8" src="classes.js"></script>
+            <script type="text/javascript" charset="utf-8" src="variables.js"></script>
+            <script type="text/javascript" charset="utf-8" src="utils.js"></script>
+            <script type="text/javascript" charset="utf-8" src="report.js"></script>
+            <script type="text/javascript" charset="utf-8" src="load.js"></script>
+            </head>
+    <body> 
+ 
+        <div data-role="page" id="stage">
+            <div data-role="header">
+                <h1>iSDO</h1>
+            </div><!-- /header -->
+            <div data-role="content">
+				<div>
+					<button align="left" onclick=stopObservation() data-inline="true">DONE</button>
+					<h1 align="right"><span id="running-time">00:00</span><span class="interval-label"> Interval 1</span></h1>
+				</div>
+				<br/>
+                <br/>
+                <br/>
+                <h1 align="center" id="time">00:00</h1>
+                <br/>
+                <br/>
+
+				<table align="center">
+					<thead>
+						<div data-role="controlgroup" data-type="horizontal">
+							<tr id="event-button-row">
+                                <!-- <td><button data-code="i" data-mini="true" class="event-button" onclick=tally("i")>i</button></td> -->
+							</tr>
+						</div>
+					</thead>
+					<tbody>
+						<tr id="event-label-row">
+						</tr>
+					</tbody>
+				</table>
+            <div data-role="popup" id="initial-sample-popup">
+
+				<style type="text/css">
+					#initial-sample-popup {
+						background: rgba(0, 0, 0, 0.5);
+					}
+				</style>
+				<h2 align="center" style="color: #FF0000" id="initial-time-remaining"></h2>
+                <br />
+                <br />
+                <br />
+				
+				<fieldset id="start-level1" data-role="controlgroup" data-type="horizontal" data-enhance="true">
+					<legend>Level 1:</legend>
+					<!-- radio buttons in here -->
+					
+				</fieldset>
+				<br />
+				<fieldset id="start-level2" data-role="controlgroup" data-type="horizontal" data-enhance="true">
+					<legend>Level 2:</legend>
+					<!-- radio buttons here -->
+					
+				</fieldset>
+                <!--<fieldset  data-role="controlgroup" data-type="horizontal">
+
+                    <label for="MO">MO</label>
+                    <label for="GP">GP</label>
+                    <label for="NP">NP</label>
+                    <label for="PB">PB</label>
+                    <label for="PLC">PLC</label>
+                    <label for="FE">FE</label>
+                    <label for="ASB">ASB</label>
+                    <label for="ALB">ALB</label>
+                    <label for="TT">TT</label>
+                    <label for="ER">ER</label>
+                    <label for="RP">RP</label>
+                    <label for="PI">PI</label>
+                    <label for="MPS">MPS</label>
+
+                    <input type="checkbox" name="MO" id="MO" value="MO"  />
+                    <input type="checkbox" name="GP" id="GP" value="GP"  />
+                    <input type="checkbox" name="NP" id="NP" value="NP"  />
+                    <input type="checkbox" name="PB" id="PB" value="PB"  />
+                    <input type="checkbox" name="PLC" id="PLC" value="PlC"  />
+                    <input type="checkbox" name="FE" id="FE" value="FE"  />
+                    <input type="checkbox" name="ASB" id="ASB" value="ASB"  />
+                    <input type="checkbox" name="ALB" id="ALB" value="ALB"  />
+                    <input type="checkbox" name="TT" id="TT" value="TT"  />
+                    <input type="checkbox" name="ER" id="ER" value="ER"  />
+                    <input type="checkbox" name="RP" id="RP" value="RP"  />
+                    <input type="checkbox" name="PI" id="PI" value="PI"  />
+                    <input type="checkbox" name="MPS" id="MPS" value="MPS"  />
+                </fieldset>-->
+
+            </div>
+        
+			<div data-role="popup" id="recurring-sample-popup">
+				<br />
+				<style type="text/css">
+					#recurring-sample-popup {
+						background: rgba(0, 0, 0, 0.5);
+					}
+				</style>
+				
+				<h1 align="center" class="interval-label"></h1>
+				<h2 align="center" style="color: #FF0000" id="time-remaining"></h2>
+				
+				<fieldset id="recur-level1" data-role="controlgroup" data-type="horizontal">
+		
+	
+					<!--<label for="MO">MO</label>
+					<label for="GP">GP</label>
+					<label for="NP">NP</label>
+					<label for="PB">PB</label>
+					<label for="PLC">PLC</label>
+					<label for="FE">FE</label>
+					<label for="ASB">ASB</label>
+					<label for="ALB">ALB</label>
+					<label for="TT">TT</label>
+					<label for="ER">ER</label>
+					<label for="RP">RP</label>
+					<label for="PI">PI</label>
+					<label for="MPS">MPS</label>
+	
+					<input type="checkbox" name="MO" id="MO" value="MO"  />
+					<input type="checkbox" name="GP" id="GP" value="GP"  />
+					<input type="checkbox" name="NP" id="NP" value="NP"  />
+					<input type="checkbox" name="PB" id="PB" value="PB"  />
+					<input type="checkbox" name="PLC" id="PLC" value="PlC"  />
+					<input type="checkbox" name="FE" id="FE" value="FE"  />
+					<input type="checkbox" name="ASB" id="ASB" value="ASB"  />
+					<input type="checkbox" name="ALB" id="ALB" value="ALB"  />
+					<input type="checkbox" name="TT" id="TT" value="TT"  />
+					<input type="checkbox" name="ER" id="ER" value="ER"  />
+					<input type="checkbox" name="RP" id="RP" value="RP"  />
+					<input type="checkbox" name="PI" id="PI" value="PI"  />
+					<input type="checkbox" name="MPS" id="MPS" value="MPS"  />-->
+				</fieldset>
+				
+				<fieldset id="recur-level2" data-role="controlgroup" data-type="horizontal">
+					
+				</fieldset>
+				<br />
+				<br />
+<!--				<button onclick=hideBehaviorDialog()>CONTINUE</button>
+				<button onclick=clearIntervalStates()>CLEAR</button>-->
+			</div>
+
+            </div><!-- /content -->
+        </div><!-- /page -->
+    </body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>iSDO</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+            <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+            <script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+            <script type="text/javascript" charset="utf-8" src="cordova-2.1.0.js"></script>
+            <script type="text/javascript" charset="utf-8" src="EmailComposer.js"></script>
+            <script type="text/javascript" charset="utf-8" src="classes.js"></script>
+            <script type="text/javascript" charset="utf-8" src="variables.js"></script>
+            <script type="text/javascript" charset="utf-8" src="utils.js"></script>
+            <script type="text/javascript" charset="utf-8" src="report.js"></script>
+            <script type="text/javascript" charset="utf-8" src="load.js"></script>
+            </head>
+
+    <body> 
+
+        <div data-role="page" id="observe">
+
+            <div data-role="header">
+                <h1>iSDO</h1>
+            </div><!-- /header -->
+
+            <div data-role="content" >		
+
+                <label for="subject-name">Subject Name</label>
+                <input type="text" name="subject-name" id="subject-name" />
+
+                <label for="subject-number">Subject Number</label>
+                <input type="text" name="subject-number" id="subject-number" />
+
+                <label for="observer-name">Observer Name</label>
+                <input type="text" name="observer-name" id="observer-name" />
+
+				
+				<!-- optional fields to be added later-->
+				
+				
+                <label for="interval-in-seconds">Select Interval:</label>
+                <select class="timeSlider" name="interval-in-seconds" id="interval-in-seconds" data-role="slider" data-mini="true">
+                    <option value="15">15</option>
+                    <option value="30">30</option>
+                </select>
+				
+				<br />
+				<fieldset data-role="controlgroup" data-type="horizontal">
+					<legend>Choose length of time:</legend>
+						<input onclick=setTotalSeconds(3) name="time-length" type="radio" id="choice-3" value="3" />
+						<label  for="choice-3">3</label>
+						
+						<input onclick=setTotalSeconds(5) name="time-length" type="radio" id="choice-5" value="5" />
+						<label for="choice-5">5</label>
+						
+						<input onclick=setTotalSeconds(7) name="time-length" type="radio" id="choice-7" value="7" />
+						<label for="choice-7">7</label>
+				</fieldset>
+				
+				<br />
+                <a href="#" onclick=createObservation() data-role="button">Start Observation</a>
+
+            </div><!-- /content -->
+
+        </div><!-- /page -->
+    </body>
+</html>
