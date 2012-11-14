@@ -142,6 +142,7 @@ function createObservation() {
                                          $("input:radio[name=time-length]:checked").val(),
                                          namespaces.SCI);
     
+    console.log("ADDING INTERVAL!");
     currentObservation.addInterval();
     
     console.log("subject-name: "+$("#subject-name").val()+
@@ -150,6 +151,7 @@ function createObservation() {
                 "\ninterval freq: "+$("select.timeSlider").val()+
                 "\npopup interfal countdown: "+$("input:radio[name=time-length]:checked").val());
     
+    console.log("SWITING PAGE TO OBSERVATION-STAGE!");
     //now switch the page to the observation-stage
     $.mobile.changePage("observation-stage.html");
 }
