@@ -243,7 +243,12 @@ function record_states() {
 }
 
 function testbeep() {
-    var beep_file = new Media("beep.wav", function() { }, function() { });
+    var beep_file = new Media("beep.wav",
+    						 function() {
+    						 	console.log("SUCCESS!");
+    						 },
+    						  function() {
+    						  	console.log("ERROR!"); });
     beep_file.play();
 }
 
