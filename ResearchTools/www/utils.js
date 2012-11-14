@@ -294,6 +294,7 @@ function clearIntervalStates() {
 
 function beep(numberOfBeeps) {
     for(var i = 0; i < numberOfBeeps; i++) {
-        beep_file.play();
+        //beep_file.play();
+    	testbeep();
     }
 }

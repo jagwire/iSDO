@@ -151,9 +151,9 @@ function createObservation() {
     $.mobile.changePage("observation-stage.html");
 }
 
-console.log("CREATING BEEP_FILE!");
+/*console.log("CREATING BEEP_FILE!");
 var beep_file = new Media("beep.wav", function() { 
 										console.log("beep_file creation SUCCESS!");
 									}, function() {
 										console.log("beep_file creation ERROR!");
-									 });
+									 });*/
