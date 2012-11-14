@@ -61,6 +61,7 @@ function Interval(level1, level2, events) {
 }
 
 function Observation(name, number, observer, intervalLength, popupLength, namespace) {
+	console.log("Observation: DECLARING VARIABLES");
     this.intervals = new Array();
     this.subjectName = name;
     this.subjectNumber = number;
@@ -75,12 +76,12 @@ function Observation(name, number, observer, intervalLength, popupLength, namesp
     
     //the namespace of the
     this.namespace = namespace;
-    
+    var self = this;
     this.addInterval = function() {
         console.log("ADDING INTERVAL!");
         var ns = namespaces.SCI;
         
-        this.intervals.push(new Interval(ns.level1_states,
+        self.intervals.push(new Interval(ns.level1_states,
                                                        ns.level2_states,
                                                        ns.default_events));
     }
