@@ -41,39 +41,34 @@ var show = false;
 
 var frequency = 15000;
 
-console.log("CREATING BEEP_FILE!");
-var beep_file = new Media("beep.wav", function() { 
-										console.log("beep_file creation SUCCESS!");
-									}, function() {
-										console.log("beep_file creation ERROR!");
-									 });
+
 
 
 /* Default Data */
 
 var namespaces = ({
                   
-                  SCI : {
-                  level1_states: {
-                  MO: "Modeling",
-                  GP: "Guided Practice",
-                  NP: "Naturalistic Practice",
-                  PB: "Progressive Building",
-                  PLC: "Previously Learning Skills",
-                  OTHER: "Other"
+	SCI : {
+		level1_states: {
+        	MO: "Modeling",
+            GP: "Guided Practice",
+        	NP: "Naturalistic Practice",
+            PB: "Progressive Building",
+                  		PLC: "Previously Learning Skills",
+                  		OTHER: "Other"
                   
-                  },
+                  	},
                   
-                  level2_states: {
-                  FE: "Facial Expressions",
-                  ASB: "Appropriate Speaker Behaviors",
-                  ALB: "Appropriate Learning Behaviors",
-                  TT: "Turn Taking",
-                  ER: "Emotional Ranges",
-                  RP: "Recognizing Perspectives",
-                  PI: "Problem Identification",
-                  MPS: "Multiple Problem Solutions",
-                  OTHER: "Other"
+                  	level2_states: {
+                  		FE: "Facial Expressions",
+                  		ASB: "Appropriate Speaker Behaviors",
+                  		ALB: "Appropriate Learning Behaviors",
+                  		TT: "Turn Taking",
+                  		ER: "Emotional Ranges",
+                  		RP: "Recognizing Perspectives",
+                  		PI: "Problem Identification",
+                  		MPS: "Multiple Problem Solutions",
+                  		OTHER: "Other"
                   
                   },
                   
@@ -108,7 +103,7 @@ var namespaces = ({
                   }
                   
                   
-                  });
+});
 
 
 var testObservationData = new Observation("Joe", "1234", "Ryan", 15, 7, namespaces.SCI);
@@ -155,3 +150,10 @@ function createObservation() {
     //now switch the page to the observation-stage
     $.mobile.changePage("observation-stage.html");
 }
+
+console.log("CREATING BEEP_FILE!");
+var beep_file = new Media("beep.wav", function() { 
+										console.log("beep_file creation SUCCESS!");
+									}, function() {
+										console.log("beep_file creation ERROR!");
+									 });

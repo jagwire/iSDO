@@ -79,7 +79,7 @@ function Observation(name, number, observer, intervalLength, popupLength, namesp
     var self = this;
     this.addInterval = function() {
         console.log("ADDING INTERVAL!");
-        var ns = namespaces.SCI;
+        var ns = self.namespace.SCI;
         
         self.intervals.push(new Interval(ns.level1_states,
                                                        ns.level2_states,
