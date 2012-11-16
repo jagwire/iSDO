@@ -13,6 +13,17 @@
             <script type="text/javascript" charset="utf-8" src="utils.js"></script>
             <script type="text/javascript" charset="utf-8" src="report.js"></script>
             <script type="text/javascript" charset="utf-8" src="load.js"></script>
+            
+            <style>
+   
+            	.float-left {
+            		float: left;
+            	}
+            	.float-right {
+            		float: right;
+            	}
+            </style>
+            
             </head>
     <body> 
  
@@ -22,8 +33,8 @@
             </div><!-- /header -->
             <div data-role="content">
 				<div>
-					<button align="left" onclick=stopObservation() data-inline="true">DONE</button>
-					<h1 align="right"><span id="running-time">00:00</span><span class="interval-label"> Interval 1</span></h1>
+					<h1><button onclick=stopObservation() class="float-left" data-inline="true">DONE</button>
+					<span id="running-time" class="float-right">00:00</span><span class="interval-label float-right"> Interval 1</span></h1>
 				</div>
 				<br/>
                 <br/>

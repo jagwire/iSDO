@@ -57,13 +57,15 @@ function _interval() {
     seconds = 0;
     minutes = 0;
     
-    $('.interval-label').text(" Interval "+current_interval);
+    $('.interval-label').text(" Interval "+currentObservation.currentInterval);
     beep(2);
     $('#recurring-sample-popup').popup("open");
     
     
     currentObservation.currentInterval += 1;
-    currentObservation.addInterval();
+    if(currentObservation.currentInterval > 240) {
+    	currentObservation.addInterval();
+    }
     
     //    session.intervals[current_interval] = new Object();
     //    session.intervals[current_interval].behaviors = new Array();
@@ -204,7 +206,7 @@ function load_events(namespace) {
         $(str).appendTo("#event-button-row");
         
         var id = "\""+i+"-tally\"";
-        console.log("BUILDING ID: "+id);
+    //    console.log("BUILDING ID: "+id);
         var eventrow = "<td class=\"tally-box\" align=\"center\" id="+id+">0</td>"
         $(eventrow).appendTo("#event-label-row");
         
@@ -217,38 +219,39 @@ function load_events(namespace) {
 //put events into DOM, currentObservation
 function record_events() {
     $(".event-button").each(function(index, e) {
-                            var label = $(this).data("code");
+        var label = $(this).data("code");
                             
-                            var occurrences = $("#"+label+"-tally").text();
+        var occurrences = $("#"+label+"-tally").text();
                             
-                            var curInt = currentObservation.currentInterval;
-                            curInt -= 1;
+        var curInt = currentObservation.currentInterval;
+        curInt -= 1;
                             
-                            currentObservation.intervals[curInt].events[label] = occurrences;
-                            console.log("RECORDING "+occurrences+" FOR "+label+" IN INTERVAL: "+curInt);
-                            });
+        currentObservation.intervals[curInt].events[label] = occurrences;
+        console.log("RECORDING "+occurrences+" FOR "+label+" IN INTERVAL: "+curInt);
+    });
 }
 
 //put states into DOM, currentObservation
 function record_states() {
     $("input:radio[name=group1]:checked").each(function() {
                                                
-                                               //current interval
-                                               var curInt = currentObservation.currentInterval;
-                                               var state = $(this).val();
-                                               curInt -= 1;
-                                               console.log("RECORDING "+true+" FOR "+state+" IN INTERVAL: "+curInt);
-                                               currentObservation.intervals[curInt].states[state] = true;
-                                               });
+        //current interval
+        var curInt = currentObservation.currentInterval;
+        var state = $(this).val();
+        curInt -= 1;
+        console.log("RECORDING "+true+" FOR "+state+" IN INTERVAL: "+curInt);
+        currentObservation.intervals[curInt].states[state] = true;
+    });
 }
 
 function testbeep() {
     var beep_file = new Media("beep.wav",
     						 function() {
-    						 	console.log("SUCCESS!");
+    						 	//console.log("SUCCESS!");
     						 },
     						  function() {
-    						  	console.log("ERROR!"); });
+    						  	//console.log("ERROR!");
+    						});
     beep_file.play();
 }
 
