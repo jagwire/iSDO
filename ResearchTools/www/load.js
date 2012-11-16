@@ -45,6 +45,7 @@ $("#report-content").live('pageshow', function(event, ui) {
                          
                          reportIntervalsData(currentObservation.intervals);
                          iterateOverIntervals(currentObservation.intervals);
+                         console.log("EMAILING CSV FILE!");
                          email(csv_file.file);
 });
 

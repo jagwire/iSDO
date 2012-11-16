@@ -104,6 +104,7 @@ function iterateOverIntervals(intervals) {
 			processEvent(intervalCount, event, events[event]);
 		}
 	}
+	console.log("END OF ITERATION OF INTERVALS!");
 	csv_file.joinFile();
 	$("#report-content").append("<p> DATA: "+csv_file.file+"</p>");
 	console.log(csv_file.file);
