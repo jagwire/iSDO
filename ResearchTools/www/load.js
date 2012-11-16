@@ -36,9 +36,9 @@ $("#stage").live('pageshow', function(event, ui) {
 
 $("#report-content").live('pageshow', function(event, ui) {
                          console.log("LOADING REPORT!");
-                         createRowsForStates(namespaces.SCI.level1_states);
-                         createRowsForStates(namespaces.SCI.level2_states);
-                         createRowsForEvents(namespaces.SCI.default_events);
+                         //createRowsForStates(namespaces.SCI.level1_states);
+                         //createRowsForStates(namespaces.SCI.level2_states);
+                         //createRowsForEvents(namespaces.SCI.default_events);
                          
                          //reportIntervalsData(testObservationData.intervals);
                          //iterateOverIntervals(testObservationData.intervals);

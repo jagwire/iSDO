@@ -101,6 +101,7 @@ function iterateOverIntervals(intervals) {
 		var events = intervals[i].events;
 		
 		for(var event in events) {
+			console.log("PROCESSING EVENT: " +event+"->"+events[event]+" for interval: "+intervalCount);
 			processEvent(intervalCount, event, events[event]);
 		}
 	}
@@ -120,17 +121,17 @@ function processState(interval_index, state_index, value) {
 		symbol = " ";
 	}
 	
-	var tableCell = "<td>"+symbol+"</td>";
-	$(tableCell).appendTo("#"+state_index+"-state-table-row");
+	//var tableCell = "<td>"+symbol+"</td>";
+	//$(tableCell).appendTo("#"+state_index+"-state-table-row");
 	csv_file.updateValue(state_index, interval_index, symbol);
 	console.log(state_index+"," +interval_index+"="+value); 
 	
 }
 
 function processEvent(interval_index, event_index, value) {
-	var tableCell = "<td>"+value+"</td>";
+	//var tableCell = "<td>"+value+"</td>";
 	
-	$(tableCell).appendTo("#"+value+"-event-table-row");
+	//$(tableCell).appendTo("#"+value+"-event-table-row");
 	csv_file.updateValue(event_index, interval_index, value);
 
 }
