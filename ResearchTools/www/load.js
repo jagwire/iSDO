@@ -49,3 +49,7 @@ $("#report-content").live('pageshow', function(event, ui) {
                          email(csv_file.file);
 });
 
+function email_csv() {
+	email(csv_file.file);
+}
+
