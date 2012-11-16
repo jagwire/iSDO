@@ -77,6 +77,14 @@ function Observation(name, number, observer, intervalLength, popupLength, namesp
     //the namespace of the
     this.namespace = namespace;
     var self = this;
+    
+    for(var counter = 0; counter < 240; counter++) {
+    	var ns = namespaces.SCI;
+    	self.intervals.push(new Interval(ns.level1_states,
+    								     ns.level2_states,
+    								     ns.default_events;
+    }
+    
     this.addInterval = function() {
         console.log("ADDING INTERVAL!");
         var ns = namespaces.SCI;

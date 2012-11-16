@@ -28,6 +28,10 @@ $("#stage").live('pageshow', function(event, ui) {
         popupTimerHandle.start();
         show = true;
     }
+    
+    csv_file = new CSVFile(namespaces.SCI.level1_states,
+    					   namespaces.SCI.level2_states,
+    					   namespaces.SCI.default_events);
 });
 
 $("#report-content").live('pageshow', function(event, ui) {
@@ -36,11 +40,11 @@ $("#report-content").live('pageshow', function(event, ui) {
                          createRowsForStates(namespaces.SCI.level2_states);
                          createRowsForEvents(namespaces.SCI.default_events);
                          
-                         reportIntervalsData(testObservationData.intervals);
-                         iterateOverIntervals(testObservationData.intervals);
+                         //reportIntervalsData(testObservationData.intervals);
+                         //iterateOverIntervals(testObservationData.intervals);
                          
-                         //reportIntervalsData(currentObservation.intervals);
-                         //iterateOverIntervals(currentObservation.intervals);
+                         reportIntervalsData(currentObservation.intervals);
+                         iterateOverIntervals(currentObservation.intervals);
                          email(csv_file.file);
 });
 

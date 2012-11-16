@@ -124,7 +124,7 @@ testObservationData.intervals[2].states["MO"] = true;
 testObservationData.intervals[2].states["FE"] = true;
 testObservationData.intervals[2].events["VVE"] = 30;
 
-var csv_file = new CSVFile(testSCI.level1_states, testSCI.level2_states, testSCI.default_events);
+var csv_file = new Object();// CSVFile(testSCI.level1_states, testSCI.level2_states, testSCI.default_events);
 
 function createObservation() {
     
@@ -137,8 +137,8 @@ function createObservation() {
                                          $("input:radio[name=time-length]:checked").val(),
                                          namespaces.SCI);
     
-    console.log("ADDING INTERVAL!");
-    currentObservation.addInterval();
+    //console.log("ADDING INTERVAL!");
+    //currentObservation.addInterval();
     
     console.log("subject-name: "+$("#subject-name").val()+
                 "\nsubject-number: "+$("#subject-number").val()+
@@ -146,7 +146,7 @@ function createObservation() {
                 "\ninterval freq: "+$("select.timeSlider").val()+
                 "\npopup interfal countdown: "+$("input:radio[name=time-length]:checked").val());
     
-    console.log("SWITING PAGE TO OBSERVATION-STAGE!");
+    //console.log("SWITING PAGE TO OBSERVATION-STAGE!");
     //now switch the page to the observation-stage
     $.mobile.changePage("observation-stage.html");
 }
