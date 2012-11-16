@@ -54,7 +54,7 @@ var namespaces = ({
             GP: "Guided Practice",
         	NP: "Naturalistic Practice",
             PB: "Progressive Building",
-        	PLC: "Previously Learning Skills",
+        	PLS: "Previously Learning Skills",
       		OTHER: "Other"
                   
         },

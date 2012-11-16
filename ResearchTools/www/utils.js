@@ -224,7 +224,7 @@ function record_events() {
         var occurrences = $("#"+label+"-tally").text();
                             
         var curInt = currentObservation.currentInterval;
-        curInt -= 1;
+        //curInt -= 1;
                             
         currentObservation.intervals[curInt].events[label] = occurrences;
         console.log("RECORDING "+occurrences+" FOR "+label+" IN INTERVAL: "+curInt);
@@ -238,7 +238,7 @@ function record_states() {
         //current interval
         var curInt = currentObservation.currentInterval;
         var state = $(this).val();
-        curInt -= 1;
+        //curInt -= 1;
         console.log("RECORDING "+true+" FOR "+state+" IN INTERVAL: "+curInt);
         currentObservation.intervals[curInt].states[state] = true;
     });
