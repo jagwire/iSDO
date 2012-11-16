@@ -36,11 +36,11 @@ $("#report-content").live('pageshow', function(event, ui) {
                          createRowsForStates(namespaces.SCI.level2_states);
                          createRowsForEvents(namespaces.SCI.default_events);
                          
-                         //reportIntervalsData(testObservationData.intervals);
-                         //iterateOverIntervals(testObservationData.intervals);
+                         reportIntervalsData(testObservationData.intervals);
+                         iterateOverIntervals(testObservationData.intervals);
                          
-                         reportIntervalsData(currentObservation.intervals);
-                         iterateOverIntervals(currentObservation.intervals);
+                         //reportIntervalsData(currentObservation.intervals);
+                         //iterateOverIntervals(currentObservation.intervals);
                          email(csv_file.file);
 });
 
