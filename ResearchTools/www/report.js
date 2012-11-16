@@ -121,7 +121,7 @@ function processState(interval_index, state_index, value) {
 	}
 	
 	var tableCell = "<td>"+symbol+"</td>";
-	$(tableCell).appendTo("#"+index+"-state-table-row");
+	$(tableCell).appendTo("#"+state_index+"-state-table-row");
 	csv_file.updateValue(state_index, interval_index, symbol);
 	console.log(state_index+"," +interval_index+"="+value); 
 	
