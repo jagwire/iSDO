@@ -119,8 +119,8 @@ function processState(interval_index, state_index, value) {
 		symbol = " ";
 	}
 	
-	//var tableCell = "<td>"+symbol+"</td>";
-	//$(tableCell).appendTo("#"+index+"-state-table-row");
+	var tableCell = "<td>"+symbol+"</td>";
+	$(tableCell).appendTo("#"+index+"-state-table-row");
 	csv_file.updateValue(state_index, interval_index, symbol);
 	console.log(state_index+"," +interval_index+"="+value); 
 	
@@ -138,7 +138,7 @@ function processEvent(interval_index, event_index, value) {
 //var rows = new Object();
 //rows[CCV] = "CCV, , , , , ,";
 
-function createRowsForStates_CCV(states, rows_object) {
+/*function createRowsForStates_CCV(states, rows_object) {
 	for(var s in states) {
 		rows_object[s] = " ";
 	}
@@ -150,7 +150,7 @@ function createRowsForEvents_CCV(events, rows_object) {
 	}
 }
 
-
+*/
 
 
 
