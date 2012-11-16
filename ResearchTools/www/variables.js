@@ -54,25 +54,24 @@ var namespaces = ({
             GP: "Guided Practice",
         	NP: "Naturalistic Practice",
             PB: "Progressive Building",
-                  		PLC: "Previously Learning Skills",
-                  		OTHER: "Other"
+        	PLC: "Previously Learning Skills",
+      		OTHER: "Other"
                   
-                  	},
+        },
                   
-                  	level2_states: {
-                  		FE: "Facial Expressions",
-                  		ASB: "Appropriate Speaker Behaviors",
-                  		ALB: "Appropriate Learning Behaviors",
-                  		TT: "Turn Taking",
-                  		ER: "Emotional Ranges",
-                  		RP: "Recognizing Perspectives",
-                  		PI: "Problem Identification",
-                  		MPS: "Multiple Problem Solutions",
-                  		OTHER: "Other"
+       	level2_states: {
+          	FE: "Facial Expressions",
+            ASB: "Appropriate Speaker Behaviors",
+            ALB: "Appropriate Learning Behaviors",
+            TT: "Turn Taking",
+            ER: "Emotional Ranges",
+            RP: "Recognizing Perspectives",
+            PI: "Problem Identification",
+            MPS: "Multiple Problem Solutions",
+            OTHER: "Other"          
+        },
                   
-                  },
-                  
-                  default_events: {
+        default_events: {
                   VVE: "Verbal/Visual Expectations",
                   SVF: "Specific Verbal Feedback",
                   EXT: "Extension",
@@ -80,29 +79,26 @@ var namespaces = ({
                   SM: "Self-Monitor",
                   EI: "Explicit Instruction",
                   CS: "Cognitive Strategies"
-                  }
-                  },
-                  Ryan: {
+        }
+    },
+    Ryan: {
                   level1_states: {
                   HAPPY: "Happy",
                   SAD: "Sad"
                   
-                  },
+    	},
                   
-                  level2_states: {
+    	level2_states: {
                   CALM: "Calm",
                   THOUGHT: "Thoughful"
-                  },
+        },
                   
-                  default_events: {
+    	default_events: {
                   SPK: "Spoke",
                   MOV: "Moved"
-                  }
-                  
-                  
-                  }
-                  
-                  
+        }
+                      
+   }                  
 });
 
 

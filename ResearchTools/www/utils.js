@@ -172,8 +172,8 @@ function load_states(namespace) {
     for(var i in namespace["level1_states"]) {
         var states = namespace["level1_states"];
         var str = " ";
-        str += "<label for=\" "+states[i]+" \">"+states[i]+"</label>";
-        str += "<input data-mini=\"true\" class=\"clearable\" type=\"radio\" name=\"group1\" id=\" "+states[i]+" \" value=\""+i+" \" />";
+        str += "<label for=\""+states[i]+"\">"+states[i]+"</label>";
+        str += "<input data-mini=\"true\" class=\"clearable\" type=\"radio\" name=\"group1\" id=\""+states[i]+"\" value=\""+i+" \" />";
         
         $(str).appendTo("#start-level1");
         $(str).appendTo("#recur-level1");
@@ -182,8 +182,8 @@ function load_states(namespace) {
     for(var i in namespace["level2_states"]) {
         var states = namespace["level2_states"];
         var str = " ";
-        str += "<label for=\" "+states[i]+" \">"+states[i]+"</label>";
-        str += "<input data-mini=\"true\" class=\"clearable\"type=\"radio\" name=\"group2\" id=\" "+states[i]+" \" value=\""+i+" \" />";
+        str += "<label for=\""+states[i]+"\">"+states[i]+"</label>";
+        str += "<input data-mini=\"true\" class=\"clearable\"type=\"radio\" name=\"group2\" id=\""+states[i]+"\" value=\""+i+"\" />";
         
         $(str).appendTo("#start-level2");
         $(str).appendTo("#recur-level2");
